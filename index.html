@@ -3,743 +3,107 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>University Portal — Demo</title>
-
-<style>
-
-*{
-  box-sizing:border-box;
-}
-
-body{
-  margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  background:#f4f4f4;
-  color:#222;
-}
-
-.hidden{
-  display:none !important;
-}
-
-.demo-banner{
-  position:fixed;
-  z-index:100;
-  top:0;
-  left:0;
-  right:0;
-  text-align:center;
-  background:#fff3cd;
-  color:#795b00;
-  font-size:11px;
-  padding:4px;
-  border-bottom:1px solid #e6d38a;
-}
-
-.layout{
-  display:flex;
-  min-height:100vh;
-  padding-top:23px;
-}
-
-.sidebar{
-  width:300px;
-  background:#29313a;
-  color:#fff;
-  flex-shrink:0;
-  position:relative;
-}
-
-.search{
-  margin:20px 25px 28px;
-  display:flex;
-  background:#fff;
-}
-
-.search input{
-  width:100%;
-  padding:12px;
-  border:0;
-  font-size:15px;
-}
-
-.search span{
-  color:#111;
-  font-size:25px;
-  padding:5px 10px;
-}
-
-.nav-item{
-  height:58px;
-  display:flex;
-  align-items:center;
-  gap:18px;
-  padding:0 25px;
-  border-bottom:1px solid rgba(255,255,255,.08);
-  font-size:17px;
-  cursor:pointer;
-}
-
-.nav-item span{
-  flex:1;
-}
-
-.nav-item.active{
-  background:#222b34;
-  border-left:3px solid #55c927;
-}
-
-.submenu{
-  background:#26303a;
-}
-
-.sub-item{
-  padding:13px 50px;
-  color:#eee;
-  font-size:16px;
-  cursor:pointer;
-}
-
-.sub-item:hover{
-  background:#202931;
-}
-
-.sub-item.selected{
-  background:#202931;
-}
-
-.logout{
-  position:absolute;
-  bottom:28px;
-  left:25px;
-  font-size:16px;
-}
-
-.main{
-  flex:1;
-  min-width:0;
-}
-
-.header{
-  height:100px;
-  background:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 35px;
-}
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap:15px;
-}
-
-.eru{
-  font-size:44px;
-  color:#b01828;
-  line-height:.8;
-}
-
-.eru strong{
-  display:block;
-  font-size:27px;
-}
-
-.uni{
-  font-family:Georgia,serif;
-  font-size:23px;
-  color:#17234a;
-}
-
-.arabic{
-  font-size:17px;
-  color:#17234a;
-  margin-top:4px;
-}
-
-.account{
-  font-size:15px;
-}
-
-.badge{
-  background:#d33;
-  color:#fff;
-  border-radius:50%;
-  padding:3px 7px;
-  font-size:11px;
-}
-
-.pagebar{
-  height:58px;
-  background:#454545;
-  color:#fff;
-  padding:13px 28px;
-  font-size:19px;
-}
-
-.hamburger{
-  color:#61ce30;
-  font-size:27px;
-  margin-right:14px;
-}
-
-.content{
-  padding:22px 25px;
-  min-height:calc(100vh - 181px);
-}
-
-.card{
-  background:#fff;
-  border:1px solid #ddd;
-  box-shadow:0 1px 4px #ccc;
-  padding:20px 25px;
-  min-height:650px;
-}
-
-.card-title{
-  font-size:19px;
-  font-weight:bold;
-  border-bottom:1px solid #ddd;
-  padding-bottom:18px;
-}
-
-.card-title span{
-  color:#69c98b;
-  letter-spacing:-4px;
-  margin-right:18px;
-}
-
-.filters{
-  margin-top:28px;
-  border:1px solid #ddd;
-  padding:25px 40px 28px;
-}
-
-.field{
-  display:grid;
-  grid-template-columns:190px 20px 1fr;
-  align-items:center;
-  gap:10px;
-  margin:10px 0;
-}
-
-.field label{
-  font-weight:bold;
-  font-size:16px;
-}
-
-.field input,
-.field select{
-  width:100%;
-  padding:13px;
-  border:1px solid #ddd;
-  font-size:16px;
-  background:#fff;
-}
-
-.filters button{
-  display:block;
-  margin:25px auto 0;
-  background:#4ab82a;
-  color:#fff;
-  border:0;
-  padding:12px 55px;
-  font-size:16px;
-  border-radius:2px;
-  cursor:pointer;
-}
-
-.result{
-  margin-top:25px;
-}
-
-.summary{
-  display:flex;
-  justify-content:space-around;
-  background:#f8fbf7;
-  border:1px solid #ddd;
-  padding:19px;
-  font-size:17px;
-}
-
-.summary strong{
-  color:#48ae29;
-}
-
-.courses{
-  margin-top:25px;
-  width:100%;
-}
-
-.course{
-  display:grid;
-  grid-template-columns:1fr 2.4fr 1.2fr .8fr 1fr .6fr;
-  align-items:center;
-  padding:14px 10px;
-  column-gap:18px;
-  font-size:16px;
-}
-
-.header-row{
-  font-size:15px;
-  padding-bottom:16px;
-}
-
-.course span:nth-child(3),
-.course span:nth-child(5),
-.course span:nth-child(4),
-.course span:nth-child(6){
-  text-align:center;
-}
-
-footer{
-  background:#29313a;
-  color:#eee;
-  padding:20px 35px;
-  font-size:13px;
-}
-
-footer u{
-  color:#69c936;
-}
-
-footer span{
-  float:right;
-  font-size:16px;
-  color:#ddd;
-}
-
-
-/* Mobile */
-
-@media(max-width:700px){
-
-  .layout{
-    display:block;
-  }
-
-  .sidebar{
-    width:100%;
-    position:relative;
-  }
-
-  .search{
-    margin:10px 15px 12px;
-  }
-
-  .nav-item{
-    height:48px;
-    padding:0 18px;
-    font-size:15px;
-  }
-
-  .sub-item{
-    padding:10px 35px;
-    font-size:14px;
-  }
-
-  .logout{
-    position:static;
-    padding:15px 18px;
-  }
-
-  .header{
-    height:auto;
-    padding:14px 12px;
-    gap:8px;
-  }
-
-  .eru{
-    font-size:30px;
-  }
-
-  .eru strong{
-    font-size:19px;
-  }
-
-  .uni{
-    font-size:15px;
-  }
-
-  .arabic{
-    font-size:11px;
-  }
-
-  .account{
-    font-size:10px;
-  }
-
-  .pagebar{
-    height:50px;
-    padding:10px 15px;
-    font-size:16px;
-  }
-
-  .content{
-    padding:8px;
-  }
-
-  .card{
-    padding:12px;
-    min-height:auto;
-  }
-
-  .filters{
-    padding:12px;
-  }
-
-  .field{
-    grid-template-columns:100px 8px 1fr;
-    gap:5px;
-  }
-
-  .field label{
-    font-size:12px;
-  }
-
-  .field input,
-  .field select{
-    padding:9px;
-    font-size:12px;
-  }
-
-  .summary{
-    font-size:11px;
-    padding:13px 5px;
-  }
-
-  .course{
-    grid-template-columns:12% 32% 16% 11% 18% 11%;
-    column-gap:0;
-    padding:11px 2px;
-    font-size:9px;
-  }
-
-  .header-row{
-    font-size:8px;
-  }
-
-  footer{
-    padding:14px 12px;
-    font-size:10px;
-  }
-
-  footer span{
-    float:none;
-    display:block;
-    margin-top:6px;
-    font-size:11px;
-  }
-}
-
-</style>
+<title>Student Portal Demo</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+<div class="demo-label">STUDENT PORTAL — DEMO</div>
 
-<div class="demo-banner">
-  DEMO — NOT AN OFFICIAL UNIVERSITY WEBSITE
+<div class="app">
+  <aside class="sidebar">
+    <div class="search"><input placeholder="Go"><span>⌕</span></div>
+
+    <div class="nav-item">» <span>Academic Affairs</span></div>
+
+    <div class="nav-item" id="servicesToggle">
+      » <span>My E-Services</span><b id="arrow">›</b>
+    </div>
+
+    <div class="submenu hidden" id="submenu">
+      <div class="sub-item">» &nbsp; Inbox</div>
+      <div class="sub-item">» &nbsp; Student Services</div>
+      <div class="sub-item" id="semesterBtn">» &nbsp; Semester Result</div>
+    </div>
+
+    <div class="nav-item">» <span>Reports</span></div>
+    <div class="nav-item">» <span>My Preferences</span></div>
+  </aside>
+
+  <main class="main">
+    <header class="header">
+      <div class="brand">
+        <div class="logo-mark">ERU</div>
+        <div>
+          <div class="uni">Egyptian Russian University</div>
+          <div class="arabic">الجامعة المصرية الروسية</div>
+        </div>
+      </div>
+      <div class="welcome">Welcome Ahmed Emad<br><small>Student View</small></div>
+    </header>
+
+    <div class="pagebar"><span class="hamburger">☰</span> Home Page</div>
+
+    <section class="content" id="homePage">
+      <div class="panel">
+        <div class="panel-title">● ● &nbsp; Student Data</div>
+        <div class="student-grid">
+          <div class="details">
+            <div><b>Student Name</b><span>:</span> Ahmed Emad Abo Elsoud Mohamed Mohamed Elsheikh</div>
+            <div><b>College</b><span>:</span> Faculty of Oral and Dental Medicine</div>
+            <div><b>Student Major</b><span>:</span> Faculty of Oral and Dental Medicine</div>
+            <div><b>Enrollment Status</b><span>:</span> Enrolled</div>
+          </div>
+          <div class="details right">
+            <div><b>Scientific Degree</b><span>:</span> B.Sc</div>
+            <div><b>Level</b><span>:</span> Level Five</div>
+            <div><b>Academic Status</b><span>:</span> --</div>
+          </div>
+          <div class="photo">Student<br>Photo</div>
+        </div>
+      </div>
+
+      <div class="panel notification">
+        <div class="panel-title">● ● &nbsp; Notification</div>
+        <div>• Courses Approved for the Student</div>
+      </div>
+    </section>
+
+    <section class="content hidden" id="semesterPage">
+      <div class="panel">
+        <div class="panel-title">● ● &nbsp; Semester Result</div>
+
+        <div class="filters">
+          <div class="field"><label>Academic Year</label><span>:</span><input value="2025/ 2026" readonly></div>
+          <div class="field"><label>Term</label><span>:</span><select><option>الصيفي</option></select></div>
+          <button id="goBtn">Go</button>
+        </div>
+
+        <div id="result" class="result hidden">
+          <div class="summary">
+            <div><b>GPA</b> : <strong>0.40</strong></div>
+            <div><b>CGPA</b> : <strong>2.09</strong></div>
+            <div><b>Passed CH</b> : <strong>146</strong></div>
+          </div>
+
+          <div class="courses">
+            <div class="course header-row">
+              <b>Course Code</b><b>Course Name</b><b>Course Status</b><b>Point</b><b>Pass / Fail</b><b>Grade</b>
+            </div>
+            <div class="course">
+              <span>OMP 402</span><span>Oral Medicine and Periodontology</span><span>نشط</span><span>2.00</span><span>ناجح</span><span>C</span>
+            </div>
+            <div class="course">
+              <span>ST207</span><span>Scientific Thinking</span><span>نشط</span><span>2.00</span><span>ناجح</span><span>C</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>Student Portal Demo · For demonstration purposes only</footer>
+  </main>
 </div>
 
-<div class="layout">
-
-<!-- SIDEBAR -->
-
-<aside class="sidebar">
-
-  <div class="search">
-    <input placeholder="Search...">
-    <span>⌕</span>
-  </div>
-
-  <div class="nav-item">
-    🏛️ <span>Academic Affairs</span><b>›</b>
-  </div>
-
-  <div class="nav-item active" id="servicesToggle">
-    🖥️ <span>My E-Services</span>
-    <b id="arrow">›</b>
-  </div>
-
-  <div class="submenu hidden" id="submenu">
-
-    <div class="sub-item">
-      • &nbsp; Inbox
-    </div>
-
-    <div class="sub-item">
-      • &nbsp; Student Services
-    </div>
-
-    <div class="sub-item" id="semesterBtn">
-      • &nbsp; Semester Result
-    </div>
-
-  </div>
-
-  <div class="nav-item">
-    📄 <span>Reports</span><b>›</b>
-  </div>
-
-  <div class="nav-item">
-    ⚙️ <span>My Preferences</span><b>›</b>
-  </div>
-
-  <div class="logout">
-    ⇱ &nbsp; Logout
-  </div>
-
-</aside>
-
-
-<!-- MAIN -->
-
-<main class="main">
-
-  <header class="header">
-
-    <div class="brand">
-
-      <div class="eru">
-        ✦<strong>ERU</strong>
-      </div>
-
-      <div>
-        <div class="uni">
-          Egyptian Russian University
-        </div>
-
-        <div class="arabic">
-          الجامعة المصرية الروسية
-        </div>
-      </div>
-
-    </div>
-
-    <div class="account">
-      🔔 <span class="badge">2</span>
-      &nbsp; ● Ahmed Emad⌄
-    </div>
-
-  </header>
-
-
-  <div class="pagebar">
-    <span class="hamburger">☰</span>
-    Home Page
-  </div>
-
-
-  <!-- SEMESTER RESULT -->
-
-  <section class="content hidden" id="semesterPage">
-
-    <div class="card">
-
-      <div class="card-title">
-        <span>● ●</span>
-        Semester Result
-      </div>
-
-
-      <div class="filters">
-
-        <div class="field">
-
-          <label>Academic Year</label>
-          <span>:</span>
-
-          <input
-            value="2025/ 2026"
-            readonly
-          >
-
-        </div>
-
-
-        <div class="field">
-
-          <label>Term</label>
-          <span>:</span>
-
-          <select>
-            <option>الصيفي</option>
-          </select>
-
-        </div>
-
-
-        <button id="goBtn">
-          Go
-        </button>
-
-      </div>
-
-
-      <!-- RESULT -->
-
-      <div id="result" class="result hidden">
-
-        <div class="summary">
-
-          <div>
-            <b>GPA</b> :
-            <strong>0.40</strong>
-          </div>
-
-          <div>
-            <b>CGPA</b> :
-            <strong>2.09</strong>
-          </div>
-
-          <div>
-            <b>Passed CH</b> :
-            <strong>146</strong>
-          </div>
-
-        </div>
-
-
-        <div class="courses">
-
-          <div class="course header-row">
-
-            <b>Course Code</b>
-            <b>Course Name</b>
-            <b>Course Status</b>
-            <b>Point</b>
-            <b>Pass / Fail</b>
-            <b>Grade</b>
-
-          </div>
-
-
-          <div class="course">
-
-            <span>OMP 402</span>
-            <span>Oral Medicine and Periodontology</span>
-            <span>نشط</span>
-            <span>2.00</span>
-            <span>ناجح</span>
-            <span>C</span>
-
-          </div>
-
-
-          <div class="course">
-
-            <span>ST207</span>
-            <span>Scientific Thinking</span>
-            <span>نشط</span>
-            <span>2.00</span>
-            <span>ناجح</span>
-            <span>C</span>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <footer>
-
-    © Copyright 2023.
-    <u>Informatique Education</u>
-    . All Rights Reserved
-
-    <span>
-      UMS | University Management System
-    </span>
-
-  </footer>
-
-</main>
-
-</div>
-
-
-<script>
-
-const servicesToggle =
-  document.getElementById("servicesToggle");
-
-const submenu =
-  document.getElementById("submenu");
-
-const arrow =
-  document.getElementById("arrow");
-
-const semesterBtn =
-  document.getElementById("semesterBtn");
-
-const semesterPage =
-  document.getElementById("semesterPage");
-
-const result =
-  document.getElementById("result");
-
-const goBtn =
-  document.getElementById("goBtn");
-
-
-/* My E-Services */
-
-servicesToggle.addEventListener("click", function(){
-
-  submenu.classList.toggle("hidden");
-
-  if(submenu.classList.contains("hidden")){
-
-    arrow.textContent = "›";
-
-  }else{
-
-    arrow.textContent = "⌄";
-
-  }
-
-});
-
-
-/* Semester Result */
-
-semesterBtn.addEventListener("click", function(){
-
-  semesterPage.classList.remove("hidden");
-
-  result.classList.add("hidden");
-
-  submenu.classList.add("hidden");
-
-  arrow.textContent = "›";
-
-  semesterPage.scrollIntoView({
-    behavior:"smooth"
-  });
-
-});
-
-
-/* GO */
-
-goBtn.addEventListener("click", function(){
-
-  result.classList.remove("hidden");
-
-  result.scrollIntoView({
-    behavior:"smooth"
-  });
-
-});
-
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
