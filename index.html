@@ -6,75 +6,222 @@
 <title>University Portal — Demo</title>
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
 <div class="demo-banner">DEMO — NOT AN OFFICIAL UNIVERSITY WEBSITE</div>
 
 <div class="layout">
+
   <aside class="sidebar">
-    <div class="search"><input placeholder="Search..."><span>⌕</span></div>
 
-    <div class="nav-item">🏛️ <span>Academic Affairs</span><b>›</b></div>
-
-    <div class="nav-item active" id="servicesToggle">🖥️ <span>My E-Services</span><b id="arrow">⌄</b></div>
-    <div class="submenu" id="submenu">
-      <div class="sub-item">• &nbsp; Inbox</div>
-      <div class="sub-item">• &nbsp; Student Services</div>
-      <div class="sub-item selected" id="semesterBtn">• &nbsp; Semester Result</div>
+    <div class="search">
+      <input placeholder="Search...">
+      <span>⌕</span>
     </div>
 
-    <div class="nav-item">📄 <span>Reports</span><b>›</b></div>
-    <div class="nav-item">⚙️ <span>My Preferences</span><b>›</b></div>
-    <div class="logout">⇱ &nbsp; Logout</div>
+    <div class="nav-item">
+      🏛️ <span>Academic Affairs</span><b>›</b>
+    </div>
+
+    <div class="nav-item active" id="servicesToggle">
+      🖥️ <span>My E-Services</span><b id="arrow">›</b>
+    </div>
+
+    <div class="submenu hidden" id="submenu">
+
+      <div class="sub-item">
+        • &nbsp; Inbox
+      </div>
+
+      <div class="sub-item">
+        • &nbsp; Student Services
+      </div>
+
+      <div class="sub-item selected" id="semesterBtn">
+        • &nbsp; Semester Result
+      </div>
+
+    </div>
+
+    <div class="nav-item">
+      📄 <span>Reports</span><b>›</b>
+    </div>
+
+    <div class="nav-item">
+      ⚙️ <span>My Preferences</span><b>›</b>
+    </div>
+
+    <div class="logout">
+      ⇱ &nbsp; Logout
+    </div>
+
   </aside>
 
+
   <main class="main">
+
     <header class="header">
+
       <div class="brand">
-        <div class="eru">✦<strong>ERU</strong></div>
-        <div><div class="uni">Egyptian Russian University</div><div class="arabic">الجامعة المصرية الروسية</div></div>
+
+        <div class="eru">
+          ✦<strong>ERU</strong>
+        </div>
+
+        <div>
+          <div class="uni">
+            Egyptian Russian University
+          </div>
+
+          <div class="arabic">
+            الجامعة المصرية الروسية
+          </div>
+        </div>
+
       </div>
-      <div class="account">🔔 <span class="badge">2</span> &nbsp; ● Ahmed Emad⌄</div>
+
+      <div class="account">
+        🔔 <span class="badge">2</span>
+        &nbsp; ● Ahmed Emad⌄
+      </div>
+
     </header>
 
-    <div class="pagebar"><span class="hamburger">☰</span> Home Page</div>
 
-    <section class="content">
+    <div class="pagebar">
+      <span class="hamburger">☰</span>
+      Home Page
+    </div>
+
+
+    <!-- Semester Result Page -->
+    <section class="content hidden" id="semesterPage">
+
       <div class="card">
-        <div class="card-title"><span>● ●</span> Semester Result</div>
+
+        <div class="card-title">
+          <span>● ●</span>
+          Semester Result
+        </div>
+
 
         <div class="filters">
-          <div class="field"><label>Academic Year</label><span>:</span><input value="2025/ 2026" readonly></div>
-          <div class="field"><label>Term</label><span>:</span>
-            <select><option>الصيفي</option></select>
+
+          <div class="field">
+            <label>Academic Year</label>
+            <span>:</span>
+            <input value="2025/ 2026" readonly>
           </div>
-          <button id="goBtn">Go</button>
+
+
+          <div class="field">
+
+            <label>Term</label>
+            <span>:</span>
+
+            <select>
+              <option>الصيفي</option>
+            </select>
+
+          </div>
+
+
+          <button id="goBtn">
+            Go
+          </button>
+
         </div>
+
+
+        <!-- Result appears after pressing Go -->
 
         <div id="result" class="result hidden">
+
           <div class="summary">
-            <div><b>GPA</b> : <strong>0.40</strong></div>
-            <div><b>CGPA</b> : <strong>2.09</strong></div>
-            <div><b>Passed CH</b> : <strong>146</strong></div>
+
+            <div>
+              <b>GPA</b> :
+              <strong>0.40</strong>
+            </div>
+
+            <div>
+              <b>CGPA</b> :
+              <strong>2.09</strong>
+            </div>
+
+            <div>
+              <b>Passed CH</b> :
+              <strong>146</strong>
+            </div>
+
           </div>
+
 
           <div class="courses">
+
             <div class="course header-row">
-              <b>Course Code</b><b>Course Name</b><b>Course Status</b><b>Point</b><b>Pass / Fail</b><b>Grade</b>
+
+              <b>Course Code</b>
+              <b>Course Name</b>
+              <b>Course Status</b>
+              <b>Point</b>
+              <b>Pass / Fail</b>
+              <b>Grade</b>
+
             </div>
+
+
             <div class="course">
-              <span>OMP 402</span><span>Oral Medicine and Periodontology</span><span>نشط</span><span>2.00</span><span>ناجح</span><span>C</span>
+
+              <span>OMP 402</span>
+              <span>Oral Medicine and Periodontology</span>
+              <span>نشط</span>
+              <span>2.00</span>
+              <span>ناجح</span>
+              <span>C</span>
+
             </div>
+
+
             <div class="course">
-              <span>ST207</span><span>Scientific Thinking</span><span>نشط</span><span>2.00</span><span>ناجح</span><span>C</span>
+
+              <span>ST207</span>
+              <span>Scientific Thinking</span>
+              <span>نشط</span>
+              <span>2.00</span>
+              <span>ناجح</span>
+              <span>C</span>
+
             </div>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
 
-    <footer>© Copyright 2023. <u>Informatique Education</u> . All Rights Reserved <span>UMS | University Management System</span></footer>
+
+    <footer>
+
+      © Copyright 2023.
+      <u>Informatique Education</u>
+      . All Rights Reserved
+
+      <span>
+        UMS | University Management System
+      </span>
+
+    </footer>
+
   </main>
+
 </div>
+
+
 <script src="script.js"></script>
+
 </body>
 </html>
