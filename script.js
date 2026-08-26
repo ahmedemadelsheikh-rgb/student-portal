@@ -1,45 +1,54 @@
-const toggle = document.getElementById("servicesToggle");
-const submenu = document.getElementById("submenu");
-const arrow = document.getElementById("arrow");
+document.addEventListener("DOMContentLoaded", function () {
 
-const semester = document.getElementById("semesterBtn");
-const semesterPage = document.getElementById("semesterPage");
+  const toggle = document.getElementById("servicesToggle");
+  const submenu = document.getElementById("submenu");
+  const arrow = document.getElementById("arrow");
 
-const result = document.getElementById("result");
-const go = document.getElementById("goBtn");
+  const semester = document.getElementById("semesterBtn");
+  const semesterPage = document.getElementById("semesterPage");
 
-
-// My E-Services
-toggle.addEventListener("click", () => {
-
-  submenu.classList.toggle("hidden");
-
-  if (submenu.classList.contains("hidden")) {
-    arrow.textContent = "›";
-  } else {
-    arrow.textContent = "⌄";
-  }
-
-});
+  const result = document.getElementById("result");
+  const go = document.getElementById("goBtn");
 
 
-// Semester Result
-semester.addEventListener("click", () => {
+  // My E-Services
+  toggle.addEventListener("click", function () {
 
-  semesterPage.classList.remove("hidden");
+    submenu.classList.toggle("hidden");
 
-  semesterPage.scrollIntoView({
-    behavior: "smooth"
+    if (submenu.classList.contains("hidden")) {
+      arrow.textContent = "›";
+    } else {
+      arrow.textContent = "⌄";
+    }
+
   });
 
-});
+
+  // Semester Result
+  semester.addEventListener("click", function () {
+
+    // Show Semester Result page
+    semesterPage.classList.remove("hidden");
+
+    // Close the services menu
+    submenu.classList.add("hidden");
+    arrow.textContent = "›";
+
+    // Move to Semester Result
+    window.scrollTo({
+      top: semesterPage.offsetTop - 20,
+      behavior: "smooth"
+    });
+
+  });
 
 
-// Go button
-go.addEventListener("click", () => {
+  // Go button
+  go.addEventListener("click", function () {
 
-  result.classList.remove("hidden");
+    result.classList.remove("hidden");
 
-  go.textContent = "Go";
+  });
 
 });
