@@ -1,54 +1,26 @@
-document.addEventListener("DOMContentLoaded", function () {
+const servicesToggle=document.getElementById("servicesToggle");
+const submenu=document.getElementById("submenu");
+const arrow=document.getElementById("arrow");
+const semesterBtn=document.getElementById("semesterBtn");
+const homePage=document.getElementById("homePage");
+const semesterPage=document.getElementById("semesterPage");
+const result=document.getElementById("result");
+const goBtn=document.getElementById("goBtn");
 
-  const toggle = document.getElementById("servicesToggle");
-  const submenu = document.getElementById("submenu");
-  const arrow = document.getElementById("arrow");
+servicesToggle.addEventListener("click",()=>{
+  submenu.classList.toggle("hidden");
+  arrow.textContent=submenu.classList.contains("hidden")?"›":"⌄";
+});
 
-  const semester = document.getElementById("semesterBtn");
-  const semesterPage = document.getElementById("semesterPage");
+semesterBtn.addEventListener("click",()=>{
+  homePage.classList.add("hidden");
+  semesterPage.classList.remove("hidden");
+  submenu.classList.add("hidden");
+  arrow.textContent="›";
+  window.scrollTo({top:0,behavior:"smooth"});
+});
 
-  const result = document.getElementById("result");
-  const go = document.getElementById("goBtn");
-
-
-  // My E-Services
-  toggle.addEventListener("click", function () {
-
-    submenu.classList.toggle("hidden");
-
-    if (submenu.classList.contains("hidden")) {
-      arrow.textContent = "›";
-    } else {
-      arrow.textContent = "⌄";
-    }
-
-  });
-
-
-  // Semester Result
-  semester.addEventListener("click", function () {
-
-    // Show Semester Result page
-    semesterPage.classList.remove("hidden");
-
-    // Close the services menu
-    submenu.classList.add("hidden");
-    arrow.textContent = "›";
-
-    // Move to Semester Result
-    window.scrollTo({
-      top: semesterPage.offsetTop - 20,
-      behavior: "smooth"
-    });
-
-  });
-
-
-  // Go button
-  go.addEventListener("click", function () {
-
-    result.classList.remove("hidden");
-
-  });
-
+goBtn.addEventListener("click",()=>{
+  result.classList.remove("hidden");
+  result.scrollIntoView({behavior:"smooth"});
 });
