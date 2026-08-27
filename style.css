@@ -1,6 +1,4 @@
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 html,body{
   margin:0;
@@ -171,7 +169,7 @@ body{
 }
 
 .content{
-  padding:10px 14px;
+  padding:12px 18px;
   min-height:350px;
   background:#fff;
 }
@@ -179,14 +177,14 @@ body{
 .panel{
   border:1px solid #d7d7d7;
   background:#fff;
-  padding:7px;
+  padding:10px;
   box-shadow:0 0 2px #ddd;
 }
 
 .panel-title{
   font-size:9px;
   color:#557;
-  margin-bottom:8px;
+  margin-bottom:10px;
 }
 
 .panel-title:first-letter{
@@ -195,58 +193,67 @@ body{
 
 
 /* =========================
-   STUDENT DATA
+   HOME - STUDENT DATA
    ========================= */
 
 .student-grid{
   display:grid;
-  grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);
-  gap:28px;
-  min-height:125px;
+  grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);
+  column-gap:55px;
+  min-height:150px;
+  padding:8px 18px 8px;
 }
 
 .details{
   font-size:9px;
-  line-height:3.05;
+  line-height:3.5;
   min-width:0;
 }
 
 .details div{
   white-space:nowrap;
+  margin-bottom:2px;
 }
 
 .details b{
   display:inline-block;
-  width:105px;
+  width:115px;
 }
 
 .details span{
-  margin:0 8px;
+  margin:0 10px;
 }
 
 
-/* Hide Student Photo */
+/* Student Photo hidden */
 
 .photo{
   display:none!important;
 }
 
 
-/* ========================= */
+/* =========================
+   NOTIFICATION
+   ========================= */
 
 .notification{
-  margin-top:8px;
+  margin-top:12px;
   min-height:48px;
   font-size:9px;
 }
 
 .notification .panel-title{
-  margin-bottom:3px;
+  margin-bottom:4px;
 }
+
+
+/* =========================
+   SEMESTER RESULT
+   ========================= */
 
 .filters{
   border:1px solid #ddd;
-  padding:16px 22px;
+  padding:18px 25px;
   margin-top:15px;
 }
 
@@ -254,7 +261,7 @@ body{
   display:grid;
   grid-template-columns:140px 12px 1fr;
   align-items:center;
-  margin:7px 0;
+  margin:9px 0;
   font-size:11px;
 }
 
@@ -272,7 +279,7 @@ body{
 
 .filters button{
   display:block;
-  margin:15px auto 0;
+  margin:17px auto 0;
   background:#5bb13a;
   color:#fff;
   border:0;
@@ -281,7 +288,7 @@ body{
 }
 
 .result{
-  margin-top:15px;
+  margin-top:17px;
 }
 
 .summary{
@@ -289,7 +296,7 @@ body{
   justify-content:space-around;
   border:1px solid #ddd;
   background:#f8fbf7;
-  padding:10px;
+  padding:11px;
   font-size:11px;
 }
 
@@ -298,14 +305,14 @@ body{
 }
 
 .courses{
-  margin-top:12px;
+  margin-top:13px;
 }
 
 .course{
   display:grid;
   grid-template-columns:1fr 2.4fr 1.2fr .8fr 1fr .6fr;
-  gap:6px;
-  padding:9px 4px;
+  gap:7px;
+  padding:10px 5px;
   font-size:10px;
   align-items:center;
 }
@@ -321,7 +328,7 @@ body{
 footer{
   background:#686868;
   color:#eee;
-  padding:11px 14px;
+  padding:12px 15px;
   font-size:8px;
 }
 
@@ -404,44 +411,48 @@ footer{
   }
 
   .content{
-    padding:9px 16px;
+    padding:10px 12px;
     min-height:330px;
   }
 
   .panel{
-    padding:7px;
+    padding:8px;
   }
 
   .panel-title{
     font-size:8px;
-    margin-bottom:7px;
+    margin-bottom:8px;
   }
 
 
-  /* Student Data - Mobile */
+  /* =========================
+     MOBILE STUDENT DATA
+     ========================= */
 
   .student-grid{
     grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);
-    gap:18px;
-    min-height:118px;
+    column-gap:30px;
+    min-height:140px;
+    padding:8px 10px 6px;
   }
 
   .details{
     font-size:7.5px;
-    line-height:3.1;
+    line-height:3.5;
     min-width:0;
   }
 
   .details div{
     white-space:nowrap;
+    margin-bottom:2px;
   }
 
   .details b{
-    width:78px;
+    width:82px;
   }
 
   .details span{
-    margin:0 4px;
+    margin:0 5px;
   }
 
   .photo{
@@ -450,6 +461,7 @@ footer{
 
 
   .notification{
+    margin-top:10px;
     font-size:8px;
     min-height:45px;
   }
