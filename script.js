@@ -27,11 +27,10 @@ servicesToggle.addEventListener("click", () => {
 
   submenu.classList.toggle("hidden");
 
-  if (submenu.classList.contains("hidden")) {
-    arrow.textContent = "›";
-  } else {
-    arrow.textContent = "⌄";
-  }
+  arrow.textContent =
+    submenu.classList.contains("hidden")
+      ? "›"
+      : "⌄";
 
 });
 
@@ -58,7 +57,7 @@ semesterBtn.addEventListener("click", () => {
 });
 
 
-/* Go Button */
+/* Go */
 
 goBtn.addEventListener("click", () => {
 
