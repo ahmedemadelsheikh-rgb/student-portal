@@ -6,104 +6,282 @@
 <title>Student Portal Demo</title>
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
 <div class="demo-label">STUDENT PORTAL — DEMO</div>
 
 <div class="app">
-  <aside class="sidebar">
-    <div class="search"><input placeholder="Go"><span>⌕</span></div>
 
-    <div class="nav-item">» <span>Academic Affairs</span></div>
+  <aside class="sidebar" id="sidebar">
+
+    <div class="search">
+      <input placeholder="Go">
+      <span>⌕</span>
+    </div>
+
+    <div class="nav-item">
+      » <span>Academic Affairs</span>
+    </div>
 
     <div class="nav-item" id="servicesToggle">
-      » <span>My E-Services</span><b id="arrow">›</b>
+      » <span>My E-Services</span>
+      <b id="arrow">›</b>
     </div>
 
     <div class="submenu hidden" id="submenu">
       <div class="sub-item">» &nbsp; Inbox</div>
       <div class="sub-item">» &nbsp; Student Services</div>
-      <div class="sub-item" id="semesterBtn">» &nbsp; Semester Result</div>
+      <div class="sub-item" id="semesterBtn">
+        » &nbsp; Semester Result
+      </div>
     </div>
 
-    <div class="nav-item">» <span>Reports</span></div>
-    <div class="nav-item">» <span>My Preferences</span></div>
+    <div class="nav-item">
+      » <span>Reports</span>
+    </div>
+
+    <div class="nav-item">
+      » <span>My Preferences</span>
+    </div>
+
   </aside>
 
+
   <main class="main">
+
     <header class="header">
+
       <div class="brand">
         <div class="logo-mark">ERU</div>
+
         <div>
           <div class="uni">Egyptian Russian University</div>
           <div class="arabic">الجامعة المصرية الروسية</div>
         </div>
       </div>
-      <div class="welcome">Welcome Ahmed Emad<br><small>Student View</small></div>
+
+      <div class="welcome">
+        Welcome Ahmed Emad Abo Elsoud Mohamed Mohamed Elsheikh | Student View<br>
+        <small>FACULTY OF ORAL AND DENTAL MEDICINE</small><br>
+        <small>2025/2026 - Summer</small>
+      </div>
+
     </header>
 
-    <div class="pagebar"><span class="hamburger">☰</span> Home Page</div>
+
+    <div class="pagebar">
+
+      <button class="hamburger" id="menuBtn">☰</button>
+
+      <span>Home Page</span>
+
+      <div class="quick-icons">
+        ◉ ◯ ◌ ◉ ◍
+      </div>
+
+    </div>
+
+
+    <!-- HOME PAGE -->
 
     <section class="content" id="homePage">
+
       <div class="panel">
-        <div class="panel-title">● ● &nbsp; Student Data</div>
-        <div class="student-grid">
-          <div class="details">
-            <div><b>Student Name</b><span>:</span> Ahmed Emad Abo Elsoud Mohamed Mohamed Elsheikh</div>
-            <div><b>College</b><span>:</span> Faculty of Oral and Dental Medicine</div>
-            <div><b>Student Major</b><span>:</span> Faculty of Oral and Dental Medicine</div>
-            <div><b>Enrollment Status</b><span>:</span> Enrolled</div>
-          </div>
-          <div class="details right">
-            <div><b>Scientific Degree</b><span>:</span> B.Sc</div>
-            <div><b>Level</b><span>:</span> Level Five</div>
-            <div><b>Academic Status</b><span>:</span> --</div>
-          </div>
-          <div class="photo">Student<br>Photo</div>
+
+        <div class="panel-title">
+          ● ● &nbsp; Student Data
         </div>
+
+        <div class="student-grid">
+
+          <div class="details">
+
+            <div>
+              <b>Student Name</b>
+              <span>:</span>
+              Ahmed Emad Abo Elsoud Mohamed Mohamed Elsheikh
+            </div>
+
+            <div>
+              <b>College</b>
+              <span>:</span>
+              Faculty of Oral and Dental Medicine
+            </div>
+
+            <div>
+              <b>Student Major</b>
+              <span>:</span>
+              Faculty of Oral and Dental Medicine
+            </div>
+
+            <div>
+              <b>Enrollment Status</b>
+              <span>:</span>
+              Enrolled
+            </div>
+
+          </div>
+
+
+          <div class="details right">
+
+            <div>
+              <b>Scientific Degree</b>
+              <span>:</span>
+              B.Sc
+            </div>
+
+            <div>
+              <b>Level</b>
+              <span>:</span>
+              Level Five
+            </div>
+
+            <div>
+              <b>Academic Status</b>
+              <span>:</span>
+              --
+            </div>
+
+          </div>
+
+
+          <!-- Student Photo removed -->
+
+          <div class="photo">
+            Student<br>Photo
+          </div>
+
+        </div>
+
       </div>
+
 
       <div class="panel notification">
-        <div class="panel-title">● ● &nbsp; Notification</div>
-        <div>• Courses Approved for the Student</div>
+
+        <div class="panel-title">
+          ● ● &nbsp; Notification
+        </div>
+
+        <div>
+          • Courses Approved for the Student
+        </div>
+
       </div>
+
     </section>
+
+
+    <!-- SEMESTER RESULT PAGE -->
 
     <section class="content hidden" id="semesterPage">
+
       <div class="panel">
-        <div class="panel-title">● ● &nbsp; Semester Result</div>
+
+        <div class="panel-title">
+          ● ● &nbsp; Semester Result
+        </div>
 
         <div class="filters">
-          <div class="field"><label>Academic Year</label><span>:</span><input value="2025/ 2026" readonly></div>
-          <div class="field"><label>Term</label><span>:</span><select><option>الصيفي</option></select></div>
+
+          <div class="field">
+            <label>Academic Year</label>
+            <span>:</span>
+            <input value="2025/ 2026" readonly>
+          </div>
+
+          <div class="field">
+            <label>Term</label>
+            <span>:</span>
+
+            <select>
+              <option>الصيفي</option>
+            </select>
+
+          </div>
+
           <button id="goBtn">Go</button>
+
         </div>
+
 
         <div id="result" class="result hidden">
+
           <div class="summary">
-            <div><b>GPA</b> : <strong>0.40</strong></div>
-            <div><b>CGPA</b> : <strong>2.09</strong></div>
-            <div><b>Passed CH</b> : <strong>146</strong></div>
+
+            <div>
+              <b>GPA</b> :
+              <strong>0.40</strong>
+            </div>
+
+            <div>
+              <b>CGPA</b> :
+              <strong>2.09</strong>
+            </div>
+
+            <div>
+              <b>Passed CH</b> :
+              <strong>146</strong>
+            </div>
+
           </div>
+
 
           <div class="courses">
+
             <div class="course header-row">
-              <b>Course Code</b><b>Course Name</b><b>Course Status</b><b>Point</b><b>Pass / Fail</b><b>Grade</b>
+              <b>Course Code</b>
+              <b>Course Name</b>
+              <b>Course Status</b>
+              <b>Point</b>
+              <b>Pass / Fail</b>
+              <b>Grade</b>
             </div>
+
+
             <div class="course">
-              <span>OMP 402</span><span>Oral Medicine and Periodontology</span><span>نشط</span><span>2.00</span><span>ناجح</span><span>C</span>
+
+              <span>OMP 402</span>
+              <span>Oral Medicine and Periodontology</span>
+              <span>نشط</span>
+              <span>2.00</span>
+              <span>ناجح</span>
+              <span>C</span>
+
             </div>
+
+
             <div class="course">
-              <span>ST207</span><span>Scientific Thinking</span><span>نشط</span><span>2.00</span><span>ناجح</span><span>C</span>
+
+              <span>ST207</span>
+              <span>Scientific Thinking</span>
+              <span>نشط</span>
+              <span>2.00</span>
+              <span>ناجح</span>
+              <span>C</span>
+
             </div>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
 
-    <footer>Student Portal Demo · For demonstration purposes only</footer>
+
+    <footer>
+      Student Portal Demo · For demonstration purposes only
+    </footer>
+
   </main>
+
 </div>
 
+
 <script src="script.js"></script>
+
 </body>
 </html>
