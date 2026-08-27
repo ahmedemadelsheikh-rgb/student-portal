@@ -1,33 +1,60 @@
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#5b5b5b;color:#222}
+html,body{margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;background:#5b5b5b;color:#222}
 .hidden{display:none!important}
-.demo-label{position:fixed;top:0;left:0;right:0;height:18px;z-index:20;text-align:center;background:#eee;color:#555;font-size:10px;line-height:18px}
-.app{display:flex;min-height:100vh;padding-top:18px;max-width:1180px;margin:auto;background:#5b5b5b}
-.sidebar{width:250px;background:#5b5b5b;color:#fff;flex-shrink:0}
+.demo-label{position:fixed;top:0;left:0;right:0;height:16px;z-index:30;text-align:center;background:#eee;color:#666;font-size:9px;line-height:16px}
+.app{display:flex;min-height:100vh;max-width:1180px;margin:auto;padding-top:16px;background:#5b5b5b}
+.sidebar{width:250px;background:#5b5b5b;color:#fff;flex:0 0 250px}
 .search{margin:5px 8px 10px;display:flex;background:#fff;height:28px}
 .search input{width:100%;border:0;padding:5px 8px;font-size:12px}
 .search span{color:#222;padding:4px 8px}
-.nav-item{height:34px;border-bottom:1px solid #777;padding:8px 8px;font-size:12px;cursor:pointer;display:flex;gap:5px}
-.nav-item span{flex:1}.submenu{background:#555}.sub-item{padding:8px 25px;font-size:12px;cursor:pointer}
-.sub-item:hover,.nav-item:hover{background:#4c4c4c}
+.nav-item{height:34px;border-bottom:1px solid #777;padding:8px;font-size:12px;cursor:pointer;display:flex;gap:5px}
+.nav-item span{flex:1}
+.submenu{background:#555}.sub-item{padding:8px 25px;font-size:12px;cursor:pointer}
 .main{flex:1;min-width:0;background:#fff}
-.header{height:72px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 20px;border-bottom:3px solid #aaa}
-.brand{display:flex;align-items:center;gap:10px}.logo-mark{font-size:24px;font-weight:bold;color:#a51d2d;border-right:1px solid #ddd;padding-right:10px}
-.uni{font-family:Georgia,serif;font-size:17px;color:#333}.arabic{font-size:12px;color:#333;margin-top:2px}
-.welcome{text-align:right;font-size:9px;color:#444}.welcome small{font-size:9px}
-.pagebar{height:34px;background:#5a5a5a;color:#fff;padding:6px 12px;font-size:14px}
-.hamburger{color:#70bd43;font-size:18px;margin-right:7px}
-.content{padding:12px 18px;min-height:340px;background:#fff}
-.panel{border:1px solid #d7d7d7;background:#fff;padding:9px;box-shadow:0 0 2px #ddd}
-.panel-title{font-size:10px;color:#557; margin-bottom:12px}.panel-title:first-letter{color:#78be58}
-.student-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) 110px;gap:16px;min-height:135px}
-.details{font-size:10px;line-height:2.8}.details div{white-space:nowrap}.details b{display:inline-block;width:105px}.details span{margin:0 7px}
-.photo{width:100px;height:125px;border:1px solid #bbb;display:flex;align-items:center;justify-content:center;text-align:center;color:#888;background:#f5f5f5;font-size:11px}
-.notification{margin-top:9px;min-height:55px;font-size:10px}.notification .panel-title{margin-bottom:4px}
-.filters{border:1px solid #ddd;padding:18px 25px;margin-top:18px}
-.field{display:grid;grid-template-columns:150px 15px 1fr;align-items:center;margin:8px 0;font-size:12px}.field label{font-weight:bold}.field input,.field select{padding:8px;border:1px solid #ddd;width:100%}
-.filters button{display:block;margin:18px auto 0;background:#5bb13a;color:#fff;border:0;padding:8px 45px;cursor:pointer}
-.result{margin-top:18px}.summary{display:flex;justify-content:space-around;border:1px solid #ddd;background:#f8fbf7;padding:12px;font-size:12px}.summary strong{color:#4cae2c}
-.courses{margin-top:15px}.course{display:grid;grid-template-columns:1fr 2.4fr 1.2fr .8fr 1fr .6fr;gap:8px;padding:10px 5px;font-size:11px;align-items:center}.header-row{font-size:10px}.course span:nth-child(n+3){text-align:center}
-footer{background:#686868;color:#eee;padding:13px 18px;font-size:9px}
-@media(max-width:800px){.app{max-width:none}.sidebar{width:195px}.header{padding:0 10px}.uni{font-size:14px}.arabic{font-size:10px}.welcome{font-size:8px}.student-grid{grid-template-columns:minmax(0,1.45fr) minmax(0,1fr) 80px;gap:8px}.details{font-size:8px}.details b{width:78px}.details span{margin:0 3px}.photo{width:72px;height:92px}.course{font-size:9px;gap:3px}.header-row{font-size:8px}}
+.header{height:62px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 12px;border-bottom:3px solid #aaa}
+.brand{display:flex;align-items:center;gap:7px}.logo-mark{font-size:21px;font-weight:bold;color:#a51d2d;border-right:1px solid #ddd;padding-right:7px}
+.uni{font-family:Georgia,serif;font-size:15px;color:#333}.arabic{font-size:10px;color:#333;margin-top:1px}
+.welcome{text-align:right;font-size:7px;color:#444;line-height:1.45}.welcome small{font-size:7px}
+.pagebar{height:30px;background:#5a5a5a;color:#fff;padding:5px 9px;font-size:13px;display:flex;align-items:center}
+.hamburger{border:0;background:none;color:#70bd43;font-size:19px;line-height:1;padding:0 6px 0 0;cursor:pointer}
+.quick-icons{margin-left:auto;color:#8bc85a;letter-spacing:3px;font-size:12px}
+.content{padding:10px 14px;min-height:350px;background:#fff}
+.panel{border:1px solid #d7d7d7;background:#fff;padding:7px;box-shadow:0 0 2px #ddd}
+.panel-title{font-size:9px;color:#557;margin-bottom:8px}.panel-title:first-letter{color:#78be58}
+.student-grid{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(0,1fr) 92px;gap:10px;min-height:125px}
+.details{font-size:9px;line-height:2.9}.details div{white-space:nowrap}.details b{display:inline-block;width:92px}.details span{margin:0 5px}
+.photo{width:88px;height:112px;border:1px solid #bbb;display:flex;align-items:center;justify-content:center;text-align:center;color:#888;background:#f5f5f5;font-size:10px}
+.notification{margin-top:8px;min-height:48px;font-size:9px}.notification .panel-title{margin-bottom:3px}
+.filters{border:1px solid #ddd;padding:16px 22px;margin-top:15px}
+.field{display:grid;grid-template-columns:140px 12px 1fr;align-items:center;margin:7px 0;font-size:11px}.field label{font-weight:bold}.field input,.field select{padding:7px;border:1px solid #ddd;width:100%;font-size:11px}
+.filters button{display:block;margin:15px auto 0;background:#5bb13a;color:#fff;border:0;padding:7px 42px;cursor:pointer}
+.result{margin-top:15px}.summary{display:flex;justify-content:space-around;border:1px solid #ddd;background:#f8fbf7;padding:10px;font-size:11px}.summary strong{color:#4cae2c}
+.courses{margin-top:12px}.course{display:grid;grid-template-columns:1fr 2.4fr 1.2fr .8fr 1fr .6fr;gap:6px;padding:9px 4px;font-size:10px;align-items:center}.header-row{font-size:9px}.course span:nth-child(n+3){text-align:center}
+footer{background:#686868;color:#eee;padding:11px 14px;font-size:8px}
+
+@media(max-width:700px){
+  body{background:#fff}
+  .app{display:block;width:100%;max-width:none;padding-top:16px;background:#fff}
+  .sidebar{display:none;position:absolute;z-index:25;top:46px;left:0;width:195px;box-shadow:2px 2px 8px rgba(0,0,0,.35)}
+  .sidebar.open{display:block}
+  .main{width:100%}
+  .header{height:62px;padding:0 7px}
+  .brand{gap:5px}.logo-mark{font-size:18px;padding-right:5px}.uni{font-size:12px}.arabic{font-size:8px}
+  .welcome{font-size:6px}.welcome small{font-size:6px}
+  .pagebar{height:29px;font-size:12px;padding:4px 8px}
+  .quick-icons{font-size:9px;letter-spacing:2px}
+  .content{padding:9px 16px;min-height:330px}
+  .panel{padding:7px}
+  .panel-title{font-size:8px;margin-bottom:7px}
+  .student-grid{grid-template-columns:minmax(0,1.55fr) minmax(0,1fr) 76px;gap:7px;min-height:118px}
+  .details{font-size:7.5px;line-height:3}
+  .details b{width:70px}.details span{margin:0 3px}
+  .photo{width:72px;height:92px;font-size:8px}
+  .notification{font-size:8px;min-height:45px}
+  footer{font-size:7px;padding:10px 12px}
+}
+
+@media(min-width:701px){
+  .app{width:100%}
+}
