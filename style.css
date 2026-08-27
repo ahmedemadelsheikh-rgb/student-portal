@@ -1,44 +1,214 @@
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{font-family:Arial,Helvetica,sans-serif;background:#5b5b5b;color:#222}
-.hidden{display:none!important}
-.demo-label{position:fixed;top:0;left:0;right:0;height:16px;z-index:30;text-align:center;background:#eee;color:#666;font-size:9px;line-height:16px}
-.app{display:flex;min-height:100vh;max-width:1180px;margin:auto;padding-top:16px;background:#5b5b5b}
-.sidebar{width:250px;background:#5b5b5b;color:#fff;flex:0 0 250px}
-.search{margin:5px 8px 10px;display:flex;background:#fff;height:28px}
-.search input{width:100%;border:0;padding:5px 8px;font-size:12px}
-.search span{color:#222;padding:4px 8px}
-.nav-item{height:34px;border-bottom:1px solid #777;padding:8px;font-size:12px;cursor:pointer;display:flex;gap:5px}
-.nav-item span{flex:1}
-.submenu{background:#555}
-.sub-item{padding:8px 25px;font-size:12px;cursor:pointer}
-.main{flex:1;min-width:0;background:#fff}
-.header{height:62px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 12px;border-bottom:3px solid #aaa}
-.brand{display:flex;align-items:center;gap:7px}
-.logo-mark{font-size:21px;font-weight:bold;color:#a51d2d;border-right:1px solid #ddd;padding-right:7px}
-.uni{font-family:Georgia,serif;font-size:15px;color:#333}
-.arabic{font-size:10px;color:#333;margin-top:1px}
-.welcome{text-align:right;font-size:7px;color:#444;line-height:1.45}
-.welcome small{font-size:7px}
-.pagebar{height:30px;background:#5a5a5a;color:#fff;padding:5px 9px;font-size:13px;display:flex;align-items:center}
-.hamburger{border:0;background:none;color:#70bd43;font-size:19px;line-height:1;padding:0 6px 0 0;cursor:pointer}
-.quick-icons{margin-left:auto;color:#8bc85a;letter-spacing:3px;font-size:12px}
-.content{padding:10px 14px;min-height:350px;background:#fff}
-.panel{border:1px solid #d7d7d7;background:#fff;padding:7px;box-shadow:0 0 2px #ddd}
-.panel-title{font-size:9px;color:#557;margin-bottom:8px}
-.panel-title:first-letter{color:#78be58}
+*{
+  box-sizing:border-box;
+}
 
-/* Student information - Photo removed */
+html,body{
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#5b5b5b;
+  color:#222;
+}
+
+.hidden{
+  display:none!important;
+}
+
+.demo-label{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  height:16px;
+  z-index:30;
+  text-align:center;
+  background:#eee;
+  color:#666;
+  font-size:9px;
+  line-height:16px;
+}
+
+.app{
+  display:flex;
+  min-height:100vh;
+  max-width:1180px;
+  margin:auto;
+  padding-top:16px;
+  background:#5b5b5b;
+}
+
+.sidebar{
+  width:250px;
+  background:#5b5b5b;
+  color:#fff;
+  flex:0 0 250px;
+}
+
+.search{
+  margin:5px 8px 10px;
+  display:flex;
+  background:#fff;
+  height:28px;
+}
+
+.search input{
+  width:100%;
+  border:0;
+  padding:5px 8px;
+  font-size:12px;
+}
+
+.search span{
+  color:#222;
+  padding:4px 8px;
+}
+
+.nav-item{
+  height:34px;
+  border-bottom:1px solid #777;
+  padding:8px;
+  font-size:12px;
+  cursor:pointer;
+  display:flex;
+  gap:5px;
+}
+
+.nav-item span{
+  flex:1;
+}
+
+.submenu{
+  background:#555;
+}
+
+.sub-item{
+  padding:8px 25px;
+  font-size:12px;
+  cursor:pointer;
+}
+
+.main{
+  flex:1;
+  min-width:0;
+  background:#fff;
+}
+
+.header{
+  height:62px;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 12px;
+  border-bottom:3px solid #aaa;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:7px;
+}
+
+.logo-mark{
+  font-size:21px;
+  font-weight:bold;
+  color:#a51d2d;
+  border-right:1px solid #ddd;
+  padding-right:7px;
+}
+
+.uni{
+  font-family:Georgia,serif;
+  font-size:15px;
+  color:#333;
+}
+
+.arabic{
+  font-size:10px;
+  color:#333;
+  margin-top:1px;
+}
+
+.welcome{
+  text-align:right;
+  font-size:7px;
+  color:#444;
+  line-height:1.45;
+}
+
+.welcome small{
+  font-size:7px;
+}
+
+.pagebar{
+  height:30px;
+  background:#5a5a5a;
+  color:#fff;
+  padding:5px 9px;
+  font-size:13px;
+  display:flex;
+  align-items:center;
+}
+
+.hamburger{
+  border:0;
+  background:none;
+  color:#70bd43;
+  font-size:19px;
+  line-height:1;
+  padding:0 6px 0 0;
+  cursor:pointer;
+}
+
+.quick-icons{
+  margin-left:auto;
+  color:#8bc85a;
+  letter-spacing:3px;
+  font-size:12px;
+}
+
+.content{
+  padding:10px 14px;
+  min-height:350px;
+  background:#fff;
+}
+
+.panel{
+  border:1px solid #d7d7d7;
+  background:#fff;
+  padding:7px;
+  box-shadow:0 0 2px #ddd;
+}
+
+.panel-title{
+  font-size:9px;
+  color:#557;
+  margin-bottom:8px;
+}
+
+.panel-title:first-letter{
+  color:#78be58;
+}
+
+
+/* =========================
+   STUDENT DATA
+   ========================= */
+
 .student-grid{
   display:grid;
-  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
-  gap:10px;
+  grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);
+  gap:28px;
   min-height:125px;
 }
 
 .details{
   font-size:9px;
-  line-height:2.9;
+  line-height:3.05;
+  min-width:0;
 }
 
 .details div{
@@ -47,81 +217,254 @@ body{font-family:Arial,Helvetica,sans-serif;background:#5b5b5b;color:#222}
 
 .details b{
   display:inline-block;
-  width:92px;
+  width:105px;
 }
 
 .details span{
-  margin:0 5px;
+  margin:0 8px;
 }
 
+
 /* Hide Student Photo */
+
 .photo{
   display:none!important;
 }
 
-.notification{margin-top:8px;min-height:48px;font-size:9px}
-.notification .panel-title{margin-bottom:3px}
-.filters{border:1px solid #ddd;padding:16px 22px;margin-top:15px}
-.field{display:grid;grid-template-columns:140px 12px 1fr;align-items:center;margin:7px 0;font-size:11px}
-.field label{font-weight:bold}
-.field input,.field select{padding:7px;border:1px solid #ddd;width:100%;font-size:11px}
-.filters button{display:block;margin:15px auto 0;background:#5bb13a;color:#fff;border:0;padding:7px 42px;cursor:pointer}
-.result{margin-top:15px}
-.summary{display:flex;justify-content:space-around;border:1px solid #ddd;background:#f8fbf7;padding:10px;font-size:11px}
-.summary strong{color:#4cae2c}
-.courses{margin-top:12px}
-.course{display:grid;grid-template-columns:1fr 2.4fr 1.2fr .8fr 1fr .6fr;gap:6px;padding:9px 4px;font-size:10px;align-items:center}
-.header-row{font-size:9px}
-.course span:nth-child(n+3){text-align:center}
-footer{background:#686868;color:#eee;padding:11px 14px;font-size:8px}
+
+/* ========================= */
+
+.notification{
+  margin-top:8px;
+  min-height:48px;
+  font-size:9px;
+}
+
+.notification .panel-title{
+  margin-bottom:3px;
+}
+
+.filters{
+  border:1px solid #ddd;
+  padding:16px 22px;
+  margin-top:15px;
+}
+
+.field{
+  display:grid;
+  grid-template-columns:140px 12px 1fr;
+  align-items:center;
+  margin:7px 0;
+  font-size:11px;
+}
+
+.field label{
+  font-weight:bold;
+}
+
+.field input,
+.field select{
+  padding:7px;
+  border:1px solid #ddd;
+  width:100%;
+  font-size:11px;
+}
+
+.filters button{
+  display:block;
+  margin:15px auto 0;
+  background:#5bb13a;
+  color:#fff;
+  border:0;
+  padding:7px 42px;
+  cursor:pointer;
+}
+
+.result{
+  margin-top:15px;
+}
+
+.summary{
+  display:flex;
+  justify-content:space-around;
+  border:1px solid #ddd;
+  background:#f8fbf7;
+  padding:10px;
+  font-size:11px;
+}
+
+.summary strong{
+  color:#4cae2c;
+}
+
+.courses{
+  margin-top:12px;
+}
+
+.course{
+  display:grid;
+  grid-template-columns:1fr 2.4fr 1.2fr .8fr 1fr .6fr;
+  gap:6px;
+  padding:9px 4px;
+  font-size:10px;
+  align-items:center;
+}
+
+.header-row{
+  font-size:9px;
+}
+
+.course span:nth-child(n+3){
+  text-align:center;
+}
+
+footer{
+  background:#686868;
+  color:#eee;
+  padding:11px 14px;
+  font-size:8px;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
 
 @media(max-width:700px){
-  body{background:#fff}
-  .app{display:block;width:100%;max-width:none;padding-top:16px;background:#fff}
-  .sidebar{display:none;position:absolute;z-index:25;top:46px;left:0;width:195px;box-shadow:2px 2px 8px rgba(0,0,0,.35)}
-  .sidebar.open{display:block}
-  .main{width:100%}
-  .header{height:62px;padding:0 7px}
-  .brand{gap:5px}
-  .logo-mark{font-size:18px;padding-right:5px}
-  .uni{font-size:12px}
-  .arabic{font-size:8px}
-  .welcome{font-size:6px}
-  .welcome small{font-size:6px}
-  .pagebar{height:29px;font-size:12px;padding:4px 8px}
-  .quick-icons{font-size:9px;letter-spacing:2px}
-  .content{padding:9px 16px;min-height:330px}
-  .panel{padding:7px}
-  .panel-title{font-size:8px;margin-bottom:7px}
 
-  /* Mobile student information - Photo removed */
+  body{
+    background:#fff;
+  }
+
+  .app{
+    display:block;
+    width:100%;
+    max-width:none;
+    padding-top:16px;
+    background:#fff;
+  }
+
+  .sidebar{
+    display:none;
+    position:absolute;
+    z-index:25;
+    top:46px;
+    left:0;
+    width:195px;
+    box-shadow:2px 2px 8px rgba(0,0,0,.35);
+  }
+
+  .sidebar.open{
+    display:block;
+  }
+
+  .main{
+    width:100%;
+  }
+
+  .header{
+    height:62px;
+    padding:0 7px;
+  }
+
+  .brand{
+    gap:5px;
+  }
+
+  .logo-mark{
+    font-size:18px;
+    padding-right:5px;
+  }
+
+  .uni{
+    font-size:12px;
+  }
+
+  .arabic{
+    font-size:8px;
+  }
+
+  .welcome{
+    font-size:6px;
+  }
+
+  .welcome small{
+    font-size:6px;
+  }
+
+  .pagebar{
+    height:29px;
+    font-size:12px;
+    padding:4px 8px;
+  }
+
+  .quick-icons{
+    font-size:9px;
+    letter-spacing:2px;
+  }
+
+  .content{
+    padding:9px 16px;
+    min-height:330px;
+  }
+
+  .panel{
+    padding:7px;
+  }
+
+  .panel-title{
+    font-size:8px;
+    margin-bottom:7px;
+  }
+
+
+  /* Student Data - Mobile */
+
   .student-grid{
-    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
-    gap:7px;
+    grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);
+    gap:18px;
     min-height:118px;
   }
 
   .details{
     font-size:7.5px;
-    line-height:3;
+    line-height:3.1;
+    min-width:0;
+  }
+
+  .details div{
+    white-space:nowrap;
   }
 
   .details b{
-    width:70px;
+    width:78px;
   }
 
   .details span{
-    margin:0 3px;
+    margin:0 4px;
   }
 
   .photo{
     display:none!important;
   }
 
-  .notification{font-size:8px;min-height:45px}
-  footer{font-size:7px;padding:10px 12px}
+
+  .notification{
+    font-size:8px;
+    min-height:45px;
+  }
+
+  footer{
+    font-size:7px;
+    padding:10px 12px;
+  }
 }
 
+
 @media(min-width:701px){
-  .app{width:100%}
+
+  .app{
+    width:100%;
+  }
+
 }
