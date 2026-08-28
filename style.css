@@ -1,493 +1,611 @@
-*{
-  box-sizing:border-box;
+* {
+  box-sizing: border-box;
 }
 
-html,body{
-  margin:0;
-  padding:0;
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f5f5;
+  color: #333;
 }
 
-body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:#5b5b5b;
-  color:#222;
+.hidden {
+  display: none !important;
 }
 
-.hidden{
-  display:none!important;
+/* DEMO LABEL */
+
+.demo-label {
+  height: 32px;
+  background: #eeeeee;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
 }
 
-.demo-label{
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  height:16px;
-  z-index:30;
-  text-align:center;
-  background:#eee;
-  color:#666;
-  font-size:9px;
-  line-height:16px;
+/* MAIN APP */
+
+.app {
+  display: flex;
+  min-height: calc(100vh - 32px);
 }
 
-.app{
-  display:flex;
-  min-height:100vh;
-  max-width:1180px;
-  margin:auto;
-  padding-top:16px;
-  background:#5b5b5b;
+/* SIDEBAR */
+
+.sidebar {
+  width: 245px;
+  background: #242424;
+  color: #ddd;
+  flex-shrink: 0;
+  padding-top: 18px;
 }
 
-.sidebar{
-  width:250px;
-  background:#5b5b5b;
-  color:#fff;
-  flex:0 0 250px;
+.search {
+  margin: 0 18px 25px;
+  position: relative;
 }
 
-.search{
-  margin:5px 8px 10px;
-  display:flex;
-  background:#fff;
-  height:28px;
+.search input {
+  width: 100%;
+  height: 34px;
+  background: #333;
+  border: 1px solid #555;
+  color: white;
+  padding: 0 35px 0 12px;
+  outline: none;
 }
 
-.search input{
-  width:100%;
-  border:0;
-  padding:5px 8px;
-  font-size:12px;
+.search span {
+  position: absolute;
+  right: 12px;
+  top: 6px;
+  color: #aaa;
+  font-size: 20px;
 }
 
-.search span{
-  color:#222;
-  padding:4px 8px;
+.nav-item {
+  min-height: 45px;
+  padding: 13px 20px;
+  border-bottom: 1px solid #333;
+  font-size: 14px;
+  cursor: pointer;
 }
 
-.nav-item{
-  height:34px;
-  border-bottom:1px solid #777;
-  padding:8px;
-  font-size:12px;
-  cursor:pointer;
-  display:flex;
-  gap:5px;
+.nav-item span {
+  margin-left: 8px;
 }
 
-.nav-item span{
-  flex:1;
+.nav-item:hover {
+  background: #333;
 }
 
-.submenu{
-  background:#555;
+.nav-item b {
+  float: right;
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 14px;
 }
 
-.sub-item{
-  padding:8px 25px;
-  font-size:12px;
-  cursor:pointer;
+.submenu {
+  background: #1d1d1d;
 }
 
-.main{
-  flex:1;
-  min-width:0;
-  background:#fff;
+.sub-item {
+  padding: 12px 20px 12px 35px;
+  font-size: 13px;
+  cursor: pointer;
+  border-bottom: 1px solid #292929;
 }
 
-.header{
-  height:62px;
-  background:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 12px;
-  border-bottom:3px solid #aaa;
+.sub-item:hover {
+  background: #333;
 }
 
-.brand{
-  display:flex;
-  align-items:center;
-  gap:7px;
+/* MAIN */
+
+.main {
+  flex: 1;
+  min-width: 0;
+  background: #f5f5f5;
 }
 
-.logo-mark{
-  font-size:21px;
-  font-weight:bold;
-  color:#a51d2d;
-  border-right:1px solid #ddd;
-  padding-right:7px;
+/* HEADER */
+
+.header {
+  height: 90px;
+  background: white;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 35px;
 }
 
-.uni{
-  font-family:Georgia,serif;
-  font-size:15px;
-  color:#333;
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
-.arabic{
-  font-size:10px;
-  color:#333;
-  margin-top:1px;
+.logo-mark {
+  width: 52px;
+  height: 52px;
+  border: 2px solid #999;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 13px;
 }
 
-.welcome{
-  text-align:right;
-  font-size:7px;
-  color:#444;
-  line-height:1.45;
+.uni {
+  font-size: 17px;
+  font-weight: bold;
+  margin-bottom: 4px;
 }
 
-.welcome small{
-  font-size:7px;
+.arabic {
+  font-size: 13px;
+  color: #777;
 }
 
-.pagebar{
-  height:30px;
-  background:#5a5a5a;
-  color:#fff;
-  padding:5px 9px;
-  font-size:13px;
-  display:flex;
-  align-items:center;
+.welcome {
+  text-align: right;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #555;
 }
 
-.hamburger{
-  border:0;
-  background:none;
-  color:#70bd43;
-  font-size:19px;
-  line-height:1;
-  padding:0 6px 0 0;
-  cursor:pointer;
+.welcome small {
+  font-size: 11px;
+  color: #777;
 }
 
-.quick-icons{
-  margin-left:auto;
-  color:#8bc85a;
-  letter-spacing:3px;
-  font-size:12px;
+/* PAGE BAR */
+
+.pagebar {
+  height: 48px;
+  background: #5b5b5b;
+  display: flex;
+  align-items: center;
+  padding: 0 25px;
+  color: white;
+  font-size: 20px;
 }
 
-.content{
-  padding:12px 18px;
-  min-height:350px;
-  background:#fff;
+.hamburger {
+  border: 0;
+  background: transparent;
+  color: #72c34d;
+  font-size: 28px;
+  margin-right: 15px;
+  cursor: pointer;
+  padding: 0;
 }
 
-.panel{
-  border:1px solid #d7d7d7;
-  background:#fff;
-  padding:9px;
-  box-shadow:0 0 2px #ddd;
+.quick-icons {
+  margin-left: auto;
+  color: #7cc65a;
+  font-size: 13px;
+  letter-spacing: 7px;
 }
 
-.panel-title{
-  font-size:9px;
-  color:#557;
-  margin-bottom:10px;
+/* CONTENT */
+
+.content {
+  padding: 35px 45px;
+  max-width: 1500px;
+  margin: auto;
 }
 
-.panel-title:first-letter{
-  color:#78be58;
+/* PANELS */
+
+.panel {
+  background: white;
+  border: 1px solid #d8d8d8;
+  margin-bottom: 28px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
+.panel-title {
+  height: 48px;
+  background: white;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  font-size: 14px;
+  color: #555;
+}
 
-/* =================================
+.panel-title::first-letter {
+  color: #6cbe45;
+}
+
+/* =========================
    STUDENT DATA
-   ================================= */
+   ========================= */
 
-.student-grid{
-  display:grid;
+.student-grid {
+  display: grid;
 
-  grid-template-columns:
-    minmax(0,1.55fr)
-    minmax(0,1fr);
+  /* عمودين واضحين */
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 
-  column-gap:100px;
+  /* المسافة بين العمودين */
+  column-gap: 65px;
 
-  padding:10px 25px 12px;
+  /* نفس إحساس الصورة المرجعية */
+  padding: 38px 45px 48px;
 
-  min-height:150px;
+  width: 100%;
 }
 
-.details{
-  min-width:0;
-  font-size:9px;
-  line-height:3.4;
+.photo {
+  display: none;
 }
 
-.details div{
-  white-space:nowrap;
-  margin:0;
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  min-width: 0;
 }
 
-.details b{
-  display:inline-block;
-  width:120px;
+.details.right {
+  padding-left: 0;
+  min-width: 0;
 }
 
-.details span{
-  display:inline-block;
-  margin:0 10px;
+/* كل سطر */
+
+.details > div {
+  display: grid;
+
+  /* اسم الحقل | : | البيانات */
+  grid-template-columns: 145px 18px minmax(0, 1fr);
+
+  align-items: start;
+
+  line-height: 1.55;
+
+  font-size: 14px;
+
+  min-width: 0;
 }
 
-.photo{
-  display:none!important;
+/* أسماء الحقول */
+
+.details b {
+  font-size: 14px;
+  color: #333;
+  white-space: nowrap;
 }
 
+/* النقطتين */
 
-/* =================================
-   NOTIFICATION
-   ================================= */
-
-.notification{
-  margin-top:12px;
-  min-height:48px;
-  font-size:9px;
+.details > div > span {
+  color: #777;
+  text-align: center;
 }
 
-.notification .panel-title{
-  margin-bottom:4px;
+/* البيانات */
+
+.details > div {
+  overflow-wrap: break-word;
 }
 
+.notification {
+  min-height: 135px;
+}
 
-/* =================================
+.notification > div:last-child {
+  padding: 25px 30px;
+  font-size: 14px;
+}
+
+/* =========================
    SEMESTER RESULT
-   ================================= */
+   ========================= */
 
-.filters{
-  border:1px solid #ddd;
-  padding:16px 22px;
-  margin-top:15px;
+.filters {
+  display: flex;
+  align-items: end;
+  gap: 30px;
+  padding: 32px 40px;
+  border-bottom: 1px solid #eee;
 }
 
-.field{
-  display:grid;
-  grid-template-columns:140px 12px 1fr;
-  align-items:center;
-  margin:7px 0;
-  font-size:11px;
+.field {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.field label{
-  font-weight:bold;
+.field label {
+  font-weight: bold;
+  font-size: 13px;
 }
 
 .field input,
-.field select{
-  padding:7px;
-  border:1px solid #ddd;
-  width:100%;
-  font-size:11px;
+.field select {
+  height: 35px;
+  min-width: 135px;
+  border: 1px solid #ccc;
+  background: white;
+  padding: 0 10px;
+  color: #444;
 }
 
-.filters button{
-  display:block;
-  margin:15px auto 0;
-  background:#5bb13a;
-  color:#fff;
-  border:0;
-  padding:7px 42px;
-  cursor:pointer;
+#goBtn {
+  height: 35px;
+  padding: 0 28px;
+  border: 1px solid #999;
+  background: #555;
+  color: white;
+  cursor: pointer;
 }
 
-.result{
-  margin-top:15px;
+#goBtn:hover {
+  background: #333;
 }
 
-.summary{
-  display:flex;
-  justify-content:space-around;
-  border:1px solid #ddd;
-  background:#f8fbf7;
-  padding:10px;
-  font-size:11px;
+/* RESULT SUMMARY */
+
+.result {
+  padding: 35px 40px 45px;
 }
 
-.summary strong{
-  color:#4cae2c;
+.summary {
+  display: flex;
+  gap: 75px;
+  margin-bottom: 35px;
+  font-size: 14px;
 }
 
-.courses{
-  margin-top:12px;
+.summary div {
+  min-width: 120px;
 }
 
-.course{
-  display:grid;
-  grid-template-columns:1fr 2.4fr 1.2fr .8fr 1fr .6fr;
-  gap:6px;
-  padding:9px 4px;
-  font-size:10px;
-  align-items:center;
+.summary strong {
+  margin-left: 5px;
+  font-weight: normal;
 }
 
-.header-row{
-  font-size:9px;
+/* COURSES */
+
+.courses {
+  width: 100%;
 }
 
-.course span:nth-child(n+3){
-  text-align:center;
+.course {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    2.6fr
+    1fr
+    .8fr
+    1fr
+    .7fr;
+
+  column-gap: 25px;
+
+  align-items: center;
+
+  min-height: 52px;
+
+  padding: 10px 15px;
+
+  font-size: 13px;
 }
 
-footer{
-  background:#686868;
-  color:#eee;
-  padding:11px 14px;
-  font-size:8px;
+.course.header-row {
+  min-height: 48px;
+  background: #f1f1f1;
+  font-size: 12px;
 }
 
+.course span,
+.course b {
+  border: none;
+}
 
-/* =================================
+/* FOOTER */
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #999;
+  font-size: 11px;
+}
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 900px) {
+
+  .sidebar {
+    width: 200px;
+  }
+
+  .header {
+    padding: 0 20px;
+  }
+
+  .content {
+    padding: 25px 25px;
+  }
+
+  /*
+    مهم:
+    نخلي Student Data عمودين
+    وممنوع يتحول لعمود واحد هنا
+  */
+
+  .student-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 35px;
+    padding: 35px 30px 42px;
+  }
+
+  .details {
+    gap: 28px;
+  }
+
+  .details > div {
+    grid-template-columns: 125px 15px minmax(0, 1fr);
+    font-size: 13px;
+  }
+
+  .details b {
+    font-size: 13px;
+  }
+
+  .welcome {
+    font-size: 11px;
+  }
+
+  .summary {
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  .course {
+    column-gap: 12px;
+    font-size: 11px;
+  }
+}
+
+/* =========================
    MOBILE
-   ================================= */
+   ========================= */
 
-@media(max-width:700px){
+@media (max-width: 600px) {
 
-  body{
-    background:#fff;
+  .app {
+    display: block;
   }
 
-  .app{
-    display:block;
-    width:100%;
-    max-width:none;
-    padding-top:16px;
-    background:#fff;
+  .sidebar {
+    display: none;
+    width: 100%;
   }
 
-  .sidebar{
-    display:none;
-    position:absolute;
-    z-index:25;
-    top:46px;
-    left:0;
-    width:195px;
-    box-shadow:2px 2px 8px rgba(0,0,0,.35);
+  .header {
+    height: 118px;
+    padding: 12px 15px;
   }
 
-  .sidebar.open{
-    display:block;
+  .brand {
+    gap: 8px;
   }
 
-  .main{
-    width:100%;
+  .logo-mark {
+    width: 48px;
+    height: 48px;
   }
 
-  .header{
-    height:62px;
-    padding:0 7px;
+  .uni {
+    font-size: 15px;
   }
 
-  .brand{
-    gap:5px;
+  .arabic {
+    font-size: 11px;
   }
 
-  .logo-mark{
-    font-size:18px;
-    padding-right:5px;
+  .welcome {
+    font-size: 9px;
+    line-height: 1.45;
   }
 
-  .uni{
-    font-size:12px;
+  .welcome small {
+    font-size: 8px;
   }
 
-  .arabic{
-    font-size:8px;
+  .pagebar {
+    height: 55px;
+    padding: 0 16px;
   }
 
-  .welcome{
-    font-size:6px;
+  .hamburger {
+    font-size: 27px;
   }
 
-  .welcome small{
-    font-size:6px;
+  .content {
+    padding: 20px 15px;
   }
 
-  .pagebar{
-    height:29px;
-    font-size:12px;
-    padding:4px 8px;
+  /*
+    Student Data يفضل عمودين
+    زي الصورة اللي طلبتها،
+    لكن بمسافات أصغر للموبايل
+  */
+
+  .student-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 22px;
+    padding: 30px 20px 35px;
   }
 
-  .quick-icons{
-    font-size:9px;
-    letter-spacing:2px;
+  .details {
+    gap: 28px;
   }
 
-  .content{
-    padding:10px 12px;
-    min-height:330px;
+  .details > div {
+    grid-template-columns: 105px 13px minmax(0, 1fr);
+    font-size: 10px;
   }
 
-  .panel{
-    padding:8px;
+  .details b {
+    font-size: 10px;
   }
 
-  .panel-title{
-    font-size:8px;
-    margin-bottom:9px;
+  .panel-title {
+    padding: 0 15px;
   }
 
-
-  /* ==============================
-     MOBILE STUDENT DATA
-     ============================== */
-
-  .student-grid{
-    grid-template-columns:
-      minmax(0,1.35fr)
-      minmax(0,1fr);
-
-    column-gap:48px;
-
-    padding:9px 12px 10px;
-
-    min-height:145px;
+  .notification > div:last-child {
+    padding: 20px 18px;
+    font-size: 12px;
   }
 
-  .details{
-    min-width:0;
-    font-size:7.5px;
-    line-height:3.35;
+  /* Result */
+
+  .filters {
+    padding: 25px 20px;
+    gap: 18px;
+    flex-wrap: wrap;
   }
 
-  .details div{
-    white-space:nowrap;
+  .field {
+    width: 100%;
   }
 
-  .details b{
-    width:82px;
+  .field input,
+  .field select {
+    flex: 1;
   }
 
-  .details span{
-    margin:0 5px;
+  .result {
+    padding: 25px 15px 35px;
+    overflow-x: auto;
   }
 
-  .photo{
-    display:none!important;
+  .summary {
+    gap: 25px;
   }
 
-
-  /* Notification */
-
-  .notification{
-    margin-top:10px;
-    font-size:8px;
-    min-height:45px;
+  .course {
+    min-width: 650px;
+    font-size: 11px;
   }
 
-  footer{
-    font-size:7px;
-    padding:10px 12px;
+  footer {
+    font-size: 10px;
+    padding: 18px 10px;
   }
-}
-
-@media(min-width:701px){
-
-  .app{
-    width:100%;
-  }
-
 }
