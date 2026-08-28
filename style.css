@@ -2,8 +2,15 @@
   box-sizing: border-box;
 }
 
+html,
 body {
   margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
   font-family: Arial, Helvetica, sans-serif;
   background: #f5f5f5;
   color: #333;
@@ -13,7 +20,9 @@ body {
   display: none !important;
 }
 
-/* DEMO LABEL */
+/* =========================
+   DEMO LABEL
+   ========================= */
 
 .demo-label {
   height: 32px;
@@ -25,20 +34,25 @@ body {
   font-size: 12px;
 }
 
-/* MAIN APP */
+/* =========================
+   APP
+   ========================= */
 
 .app {
   display: flex;
+  width: 100%;
   min-height: calc(100vh - 32px);
 }
 
-/* SIDEBAR */
+/* =========================
+   SIDEBAR
+   ========================= */
 
 .sidebar {
   width: 245px;
+  flex: 0 0 245px;
   background: #242424;
   color: #ddd;
-  flex-shrink: 0;
   padding-top: 18px;
 }
 
@@ -85,7 +99,6 @@ body {
   float: right;
   font-size: 20px;
   font-weight: normal;
-  line-height: 14px;
 }
 
 .submenu {
@@ -103,30 +116,39 @@ body {
   background: #333;
 }
 
-/* MAIN */
+/* =========================
+   MAIN
+   ========================= */
 
 .main {
-  flex: 1;
+  flex: 1 1 auto;
   min-width: 0;
   background: #f5f5f5;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+   ========================= */
 
 .header {
   height: 90px;
   background: white;
   border-bottom: 1px solid #ddd;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   padding: 0 35px;
+
+  min-width: 1000px;
 }
 
 .brand {
   display: flex;
   align-items: center;
   gap: 14px;
+  flex-shrink: 0;
 }
 
 .logo-mark {
@@ -134,9 +156,11 @@ body {
   height: 52px;
   border: 2px solid #999;
   border-radius: 50%;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   font-weight: bold;
   font-size: 13px;
 }
@@ -154,74 +178,94 @@ body {
 
 .welcome {
   text-align: right;
-  font-size: 13px;
-  line-height: 1.6;
+  font-size: 11px;
+  line-height: 1.5;
   color: #555;
+
+  white-space: nowrap;
 }
 
 .welcome small {
-  font-size: 11px;
+  font-size: 9px;
   color: #777;
 }
 
-/* PAGE BAR */
+/* =========================
+   PAGE BAR
+   ========================= */
 
 .pagebar {
   height: 48px;
   background: #5b5b5b;
+
   display: flex;
   align-items: center;
-  padding: 0 25px;
+
+  padding: 0 20px;
+
   color: white;
-  font-size: 20px;
+  font-size: 14px;
+
+  min-width: 1000px;
 }
 
 .hamburger {
   border: 0;
   background: transparent;
+
   color: #72c34d;
-  font-size: 28px;
-  margin-right: 15px;
-  cursor: pointer;
+
+  font-size: 27px;
+
+  margin-right: 10px;
   padding: 0;
+
+  cursor: pointer;
 }
 
 .quick-icons {
   margin-left: auto;
   color: #7cc65a;
+
   font-size: 13px;
-  letter-spacing: 7px;
+  letter-spacing: 6px;
 }
 
-/* CONTENT */
+/* =========================
+   CONTENT
+   ========================= */
 
 .content {
-  padding: 35px 45px;
-  max-width: 1500px;
-  margin: auto;
+  padding: 25px;
+  width: 100%;
+  min-width: 1000px;
 }
 
-/* PANELS */
+/* =========================
+   PANELS
+   ========================= */
 
 .panel {
   background: white;
-  border: 1px solid #d8d8d8;
-  margin-bottom: 28px;
+  border: 1px solid #d6d6d6;
+
+  margin-bottom: 20px;
+
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .panel-title {
-  height: 48px;
+  height: 45px;
+
   background: white;
+
   display: flex;
   align-items: center;
-  padding: 0 20px;
-  font-size: 14px;
-  color: #555;
-}
 
-.panel-title::first-letter {
-  color: #6cbe45;
+  padding: 0 15px;
+
+  font-size: 13px;
+  color: #555;
 }
 
 /* =========================
@@ -229,34 +273,42 @@ body {
    ========================= */
 
 .student-grid {
+  width: 100%;
+
   display: grid;
 
-  /* عمودين واضحين */
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  /*
+     العمود الشمال أكبر شوية
+     واليمين واضح وبعيد
+  */
 
-  /* المسافة بين العمودين */
-  column-gap: 65px;
+  grid-template-columns: 1.35fr 0.85fr;
 
-  /* نفس إحساس الصورة المرجعية */
-  padding: 38px 45px 48px;
+  column-gap: 70px;
 
-  width: 100%;
+  padding: 35px 35px 42px;
 }
+
+/* الصورة ملغية تماما */
 
 .photo {
-  display: none;
+  display: none !important;
 }
 
+/* العمودين */
+
 .details {
+  min-width: 0;
+
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  min-width: 0;
+
+  gap: 27px;
 }
 
 .details.right {
-  padding-left: 0;
   min-width: 0;
+  padding: 0;
 }
 
 /* كل سطر */
@@ -264,46 +316,60 @@ body {
 .details > div {
   display: grid;
 
-  /* اسم الحقل | : | البيانات */
-  grid-template-columns: 145px 18px minmax(0, 1fr);
+  /*
+     اسم الحقل | : | القيمة
+  */
+
+  grid-template-columns: 155px 18px minmax(0, 1fr);
 
   align-items: start;
 
-  line-height: 1.55;
-
-  font-size: 14px;
-
   min-width: 0;
+
+  font-size: 13px;
+
+  line-height: 1.55;
 }
 
-/* أسماء الحقول */
+/* العناوين */
 
 .details b {
-  font-size: 14px;
-  color: #333;
+  color: #222;
+
+  font-size: 13px;
+
   white-space: nowrap;
 }
 
-/* النقطتين */
+/* : */
 
 .details > div > span {
-  color: #777;
   text-align: center;
+  color: #777;
 }
 
-/* البيانات */
+/* النص */
 
 .details > div {
-  overflow-wrap: break-word;
+  overflow: visible;
 }
 
+.details > div {
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+/* =========================
+   NOTIFICATION
+   ========================= */
+
 .notification {
-  min-height: 135px;
+  min-height: 115px;
 }
 
 .notification > div:last-child {
-  padding: 25px 30px;
-  font-size: 14px;
+  padding: 20px 15px 25px;
+  font-size: 13px;
 }
 
 /* =========================
@@ -312,39 +378,53 @@ body {
 
 .filters {
   display: flex;
-  align-items: end;
-  gap: 30px;
-  padding: 32px 40px;
+  align-items: center;
+
+  gap: 25px;
+
+  padding: 25px 30px;
+
   border-bottom: 1px solid #eee;
 }
 
 .field {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .field label {
   font-weight: bold;
   font-size: 13px;
+  white-space: nowrap;
 }
 
 .field input,
 .field select {
-  height: 35px;
+  height: 34px;
+
   min-width: 135px;
+
   border: 1px solid #ccc;
+
   background: white;
+
   padding: 0 10px;
+
   color: #444;
 }
 
 #goBtn {
-  height: 35px;
-  padding: 0 28px;
+  height: 34px;
+
+  padding: 0 25px;
+
   border: 1px solid #999;
+
   background: #555;
+
   color: white;
+
   cursor: pointer;
 }
 
@@ -352,17 +432,22 @@ body {
   background: #333;
 }
 
-/* RESULT SUMMARY */
+/* =========================
+   RESULT SUMMARY
+   ========================= */
 
 .result {
-  padding: 35px 40px 45px;
+  padding: 30px;
 }
 
 .summary {
   display: flex;
-  gap: 75px;
-  margin-bottom: 35px;
-  font-size: 14px;
+
+  gap: 65px;
+
+  margin-bottom: 30px;
+
+  font-size: 13px;
 }
 
 .summary div {
@@ -374,7 +459,9 @@ body {
   font-weight: normal;
 }
 
-/* COURSES */
+/* =========================
+   COURSES
+   ========================= */
 
 .courses {
   width: 100%;
@@ -391,21 +478,23 @@ body {
     1fr
     .7fr;
 
-  column-gap: 25px;
+  column-gap: 20px;
 
   align-items: center;
 
-  min-height: 52px;
+  min-height: 48px;
 
-  padding: 10px 15px;
+  padding: 8px 12px;
 
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .course.header-row {
-  min-height: 48px;
+  min-height: 45px;
+
   background: #f1f1f1;
-  font-size: 12px;
+
+  font-size: 11px;
 }
 
 .course span,
@@ -413,51 +502,100 @@ body {
   border: none;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+   ========================= */
 
 footer {
+  width: 100%;
+  min-width: 1000px;
+
   text-align: center;
-  padding: 20px;
+
+  padding: 18px;
+
   color: #999;
+
   font-size: 11px;
 }
 
-/* =========================
-   TABLET
-   ========================= */
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
-@media (max-width: 900px) {
+/*
+   مهم جدا:
 
-  .sidebar {
-    width: 200px;
+   إحنا مش هنضغط التصميم على عرض الموبايل.
+   الموقع يفضل بعرض SIS الأصلي تقريبا،
+   وبالتالي النصوص لا تتكسر لحروف.
+*/
+
+@media (max-width: 600px) {
+
+  body {
+    overflow-x: auto;
+  }
+
+  .app {
+    width: 1000px;
+    min-width: 1000px;
+  }
+
+  .main {
+    width: 1000px;
+    min-width: 1000px;
   }
 
   .header {
-    padding: 0 20px;
+    width: 1000px;
+    min-width: 1000px;
+
+    height: 90px;
+
+    padding: 0 25px;
+  }
+
+  .pagebar {
+    width: 1000px;
+    min-width: 1000px;
+
+    height: 48px;
   }
 
   .content {
-    padding: 25px 25px;
+    width: 1000px;
+    min-width: 1000px;
+
+    padding: 20px 25px;
   }
 
   /*
-    مهم:
-    نخلي Student Data عمودين
-    وممنوع يتحول لعمود واحد هنا
+     Student Data
+     نفس فكرة الصورة المرجعية
   */
 
   .student-grid {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    column-gap: 35px;
+    width: 100%;
+
+    grid-template-columns: 560px 330px;
+
+    column-gap: 45px;
+
     padding: 35px 30px 42px;
   }
 
   .details {
-    gap: 28px;
+    gap: 27px;
+  }
+
+  .details.right {
+    padding: 0;
   }
 
   .details > div {
-    grid-template-columns: 125px 15px minmax(0, 1fr);
+    grid-template-columns: 155px 18px minmax(200px, 1fr);
+
     font-size: 13px;
   }
 
@@ -465,147 +603,24 @@ footer {
     font-size: 13px;
   }
 
-  .welcome {
-    font-size: 11px;
+  .notification {
+    min-height: 115px;
   }
-
-  .summary {
-    gap: 30px;
-    flex-wrap: wrap;
-  }
-
-  .course {
-    column-gap: 12px;
-    font-size: 11px;
-  }
-}
-
-/* =========================
-   MOBILE
-   ========================= */
-
-@media (max-width: 600px) {
-
-  .app {
-    display: block;
-  }
-
-  .sidebar {
-    display: none;
-    width: 100%;
-  }
-
-  .header {
-    height: 118px;
-    padding: 12px 15px;
-  }
-
-  .brand {
-    gap: 8px;
-  }
-
-  .logo-mark {
-    width: 48px;
-    height: 48px;
-  }
-
-  .uni {
-    font-size: 15px;
-  }
-
-  .arabic {
-    font-size: 11px;
-  }
-
-  .welcome {
-    font-size: 9px;
-    line-height: 1.45;
-  }
-
-  .welcome small {
-    font-size: 8px;
-  }
-
-  .pagebar {
-    height: 55px;
-    padding: 0 16px;
-  }
-
-  .hamburger {
-    font-size: 27px;
-  }
-
-  .content {
-    padding: 20px 15px;
-  }
-
-  /*
-    Student Data يفضل عمودين
-    زي الصورة اللي طلبتها،
-    لكن بمسافات أصغر للموبايل
-  */
-
-  .student-grid {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    column-gap: 22px;
-    padding: 30px 20px 35px;
-  }
-
-  .details {
-    gap: 28px;
-  }
-
-  .details > div {
-    grid-template-columns: 105px 13px minmax(0, 1fr);
-    font-size: 10px;
-  }
-
-  .details b {
-    font-size: 10px;
-  }
-
-  .panel-title {
-    padding: 0 15px;
-  }
-
-  .notification > div:last-child {
-    padding: 20px 18px;
-    font-size: 12px;
-  }
-
-  /* Result */
 
   .filters {
-    padding: 25px 20px;
-    gap: 18px;
-    flex-wrap: wrap;
-  }
-
-  .field {
-    width: 100%;
-  }
-
-  .field input,
-  .field select {
-    flex: 1;
+    padding: 25px 30px;
   }
 
   .result {
-    padding: 25px 15px 35px;
-    overflow-x: auto;
-  }
-
-  .summary {
-    gap: 25px;
+    padding: 30px;
   }
 
   .course {
-    min-width: 650px;
-    font-size: 11px;
+    min-width: 800px;
   }
 
   footer {
-    font-size: 10px;
-    padding: 18px 10px;
+    width: 1000px;
+    min-width: 1000px;
   }
 }
