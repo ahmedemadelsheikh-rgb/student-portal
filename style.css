@@ -277,11 +277,6 @@ body {
 
   display: grid;
 
-  /*
-     العمود الشمال أكبر شوية
-     واليمين واضح وبعيد
-  */
-
   grid-template-columns: 1.35fr 0.85fr;
 
   column-gap: 70px;
@@ -315,10 +310,6 @@ body {
 
 .details > div {
   display: grid;
-
-  /*
-     اسم الحقل | : | القيمة
-  */
 
   grid-template-columns: 155px 18px minmax(0, 1fr);
 
@@ -378,9 +369,10 @@ body {
 
 .filters {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
 
-  gap: 25px;
+  gap: 14px;
 
   padding: 25px 30px;
 
@@ -396,6 +388,7 @@ body {
 .field label {
   font-weight: bold;
   font-size: 13px;
+  width: 105px;
   white-space: nowrap;
 }
 
@@ -403,7 +396,8 @@ body {
 .field select {
   height: 34px;
 
-  min-width: 135px;
+  width: 305px;
+  min-width: 305px;
 
   border: 1px solid #ccc;
 
@@ -426,6 +420,8 @@ body {
   color: white;
 
   cursor: pointer;
+
+  margin-left: 295px;
 }
 
 #goBtn:hover {
@@ -523,14 +519,6 @@ footer {
    MOBILE
    ========================================================= */
 
-/*
-   مهم جدا:
-
-   إحنا مش هنضغط التصميم على عرض الموبايل.
-   الموقع يفضل بعرض SIS الأصلي تقريبا،
-   وبالتالي النصوص لا تتكسر لحروف.
-*/
-
 @media (max-width: 600px) {
 
   body {
@@ -569,11 +557,6 @@ footer {
 
     padding: 20px 25px;
   }
-
-  /*
-     Student Data
-     نفس فكرة الصورة المرجعية
-  */
 
   .student-grid {
     width: 100%;
